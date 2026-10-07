@@ -2,6 +2,7 @@ body {
   font-family: Arial;
   margin: 0;
   padding: 0;
+  font-size: 16px;
 }
 
 header {
@@ -9,7 +10,7 @@ header {
   justify-content: space-between; /* logo left, buttons right */
   align-items: center;            /* vertically center everything */
   padding: 12px 24px;
-  background-color: #1a1a1a;
+  background-color: #15151d;
   color: white;
 }
 
@@ -28,7 +29,7 @@ header .actions button {
   width: 90px;
   padding: 8px 16px;
   text-align: center;
-  background-color: #1a1a1a;
+  background-color: var(--header-background-color);
   color: darkgray;
   font-size: 16px;
   border-radius: 4px;
@@ -48,12 +49,61 @@ main {
   min-height: 400px; /* Ensure main content area has a minimum height */
 }
 
-.section-title{
-  display: block;;
+.hero-title {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 600;
+  font-size: 4.5rem;
+  padding-right: 25%;
+  color: #fff;
+  margin-bottom: 0;
 }
+.hero {
+  position: relative;           /* AI helped with this curly bracket thing */
+  overflow: hidden;             /* AI helped with this curly bracket thing */
+  background-color: #1c2436;
+  color: darkgray;
+  padding: 40px 26%;
+  font-size: 1.4em;
+}
+
+.hero::after {
+  content: "{ }";               /* AI helped with this curly bracket thing */
+  position: absolute;           /* AI helped with this curly bracket thing */
+  top: 30%;                     /* AI helped with this curly bracket thing */
+  right: -2%;                   /* AI helped with this curly bracket thing */
+  transform: translateY(-50%);  /* AI helped with this curly bracket thing */
+  font-family: 'JetBrains Mono', Consolas, monospace;   /* AI helped with this curly bracket thing */
+  font-size: 20rem;             /* AI helped with this curly bracket thing */
+  line-height: 1;               /* AI helped with this curly bracket thing */
+  color: rgba(255, 255, 255, 0.08);   /* AI helped with this curly bracket thing */
+  pointer-events: none;         /* AI helped with this curly bracket thing */
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;           /* AI helped with this curly bracket thing */
+  z-index: 1;                   /* AI helped with this curly bracket thing */
+}
+.hero-button{
+  background-color: #e0a030;
+  padding:15px 30px;
+  border-radius: 4px;
+  font-size: 1.2rem;
+}
+
+.section-title{
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 600;
+  display: block;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  font-size: 2.2rem;
+}
+
 section.featured {
   background-color: lightgray;
   padding-left: 25px;
+  padding-right: 25px;
 }
 
 .description {
@@ -64,26 +114,25 @@ section.featured {
   background: rgb(235, 235, 235);
   margin-bottom: 2em;
   padding: 0;
-  width: 18%;
-  max-width: 80%; 
+  width: auto;
   border-radius: 4px;
   border:gray 1px solid;
-  border-top: 4px solid rgb(0, 70, 136);
+  border-top: 4px solid rgb(10, 70, 115);
 }
 
-.card-content p {
-  padding: 0.5em 1.4em 0 1.4em;
-  font-size: var(--card-font-size);
-}
 .card-content {
+  padding-top: 1em;
+  padding-bottom: 0;
+  padding-left: 1.4em;
+  padding-right: 1.4em;
   background-color: white;
 }
 
 .card-actions {
   display: flex;
-  justify-content: center;
-  padding: 0.5em 1.4em;
-  font-size: var(--card-font-size);
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0.5em 0 1.4em 0;
   background-color: white;
 }
 
@@ -94,21 +143,23 @@ section.featured {
 }
 
 .cards {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 25px;
   border-bottom: 2px solid rgb(185, 185, 185);
-  
 }
 
 .card img {
-  max-width: 100%;
-  padding: 40px 0;
+  display: block;   
+  width: 100%; 
+  height: auto;
+  margin: 80px auto; 
 }
 
 .card:hover {
-  border: 2px solid #1a1a1a ;
+  border: 1px solid #1a1a1a ;
   border-top: 4px solid rgb(185, 182, 0);
+  box-shadow: 0 0 0 1px #1a1a1a;
 }
 
 .card:hover img {
@@ -134,33 +185,39 @@ section.featured {
 
 .product-name {
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 .product-price {
   font-weight: bold;
   color: #e0a030;
-  font-size: 1.1em;
+  font-size: 1.4em;
 }
 
 .about {
   background-color: white;
-  padding: 30px 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 20px;
+  font-size: 1.5em;
+}
+
+.description {
+  font-family: 'Inter', Arial, sans-serif;
+  color: #555;
 }
 
 footer {
-  width: 100%;
-  background-color: #1a1a1a;
+  background-color: #1c2436;
   color: darkgray;
   padding: 40px 20px;
-  padding-bottom: 10px;
+  font-size: 1.4em;
 }
 
 footer .copyright-text {
   border-top: 1px solid gray;
   color: gray;
   padding-top: 20px;
-  font-size: 14px;
   margin: 20px 0 10px 5px;
 }
 
@@ -177,4 +234,30 @@ table.links th {
 
 table.links td {
   padding-bottom: 15px;
+}
+
+
+@media screen and (max-width: 480px) {
+    :root {
+        --card-font-size: 100%;
+        --header-font-size: 24px;
+        --header-height: 4em;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+
+/* styles for tablet portrait and mobile landscape screens */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    :root {
+        --card-font-size: 100%;
+        --header-height: 5em;
+    }
+
+    .card {
+        width: 45%;
+    }
 }
