@@ -195,6 +195,7 @@ section.featured {
 }
 
 .about {
+  padding-left: 10%;
   background-color: white;
   padding-left: 25px;
   padding-right: 25px;
@@ -211,7 +212,22 @@ section.featured {
   background-color: lightgray;
   padding-left: 25px;
   padding-right: 25px;
-  border-bottom: 2px solid rgb(185, 185, 185)
+  border-bottom: 2px solid rgb(185, 185, 185);
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 35%
+}
+
+.story p{
+  flex: 1;
+  color: #555;
+  padding-right: 10%
+}
+
+.story .section-title{
+  padding-left: 10%;
+  flex-shrink: 0;
 }
 
 .values{
@@ -221,11 +237,29 @@ section.featured {
   border-bottom: 2px solid rgb(185, 185, 185)
 }
 
+.values .section-title{
+  text-align: center;
+  font-size: 1.8rem;
+  color: #555;
+}
+
 .team{
   background-color: lightgray;
   padding-left: 25px;
   padding-right: 25px;
   border-bottom: 2px solid rgb(185, 185, 185)
+}
+
+.team .section-title{
+  padding-left: 10%;
+  flex-shrink: 0;
+}
+
+.team p{
+  padding-left: 10%;
+  flex: 1;
+  color: #555;
+  padding-right: 50%
 }
 
 .journey{
@@ -234,11 +268,21 @@ section.featured {
   padding-right: 25px;
   border-bottom: 2px solid rgb(185, 185, 185)
 }
+.journey .section-title{
+  text-align: center;
+  font-size: 1.8rem;
+  color: #555;
+}
 
 .touch{
   background-color: lightgray;
   padding-left: 25px;
   padding-right: 25px;
+}
+
+.touch .section-title{
+  padding-left: 10%;
+  flex-shrink: 0;
 }
 
 
@@ -254,6 +298,7 @@ footer .copyright-text {
   color: gray;
   padding-top: 20px;
   margin: 20px 0 10px 5px;
+  font-size: 0.8em;
 }
 
 table.links {
@@ -268,6 +313,7 @@ table.links th {
 }
 
 table.links td {
+  color: lightgray;
   padding-bottom: 15px;
 }
 
