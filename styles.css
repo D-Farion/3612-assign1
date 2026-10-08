@@ -104,6 +104,7 @@ section.featured {
   background-color: lightgray;
   padding-left: 25px;
   padding-right: 25px;
+  border-bottom: 2px solid rgb(185, 185, 185)
 }
 
 .description {
@@ -146,7 +147,6 @@ section.featured {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 25px;
-  border-bottom: 2px solid rgb(185, 185, 185);
 }
 
 .card img {
@@ -206,6 +206,41 @@ section.featured {
   font-family: 'Inter', Arial, sans-serif;
   color: #555;
 }
+
+.story {
+  background-color: lightgray;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-bottom: 2px solid rgb(185, 185, 185)
+}
+
+.values{
+  background-color: white;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-bottom: 2px solid rgb(185, 185, 185)
+}
+
+.team{
+  background-color: lightgray;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-bottom: 2px solid rgb(185, 185, 185)
+}
+
+.journey{
+  background-color: white;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-bottom: 2px solid rgb(185, 185, 185)
+}
+
+.touch{
+  background-color: lightgray;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
 
 footer {
   background-color: #1c2436;
