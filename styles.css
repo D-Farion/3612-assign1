@@ -354,6 +354,66 @@ section.featured {
   flex-shrink: 0;
 }
 
+.timeline {
+  list-style: none;       /* remove the numbers */
+  margin: 0 auto;
+  padding: 0;
+  max-width: 600px;       /* keeps the timeline narrow and centered */
+  position: relative;     /* the line is positioned relative to this */
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;       /* no gap after the last entry */
+}
+
+.journey {
+  padding-bottom: 50px;   /* spacing below the timeline now lives here */
+}
+
+/* the vertical line. AI helped with the whole making of the line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 5px;              /* centers it under the 12px dots */
+  top: 8px;
+  bottom: 0;
+  width: 2px;
+  background-color: #d0d0d0;
+}
+
+.timeline-item {
+  position: relative;     /* the dot is positioned relative to each item */
+  padding-left: 32px;     /* makes room for the line and dot */
+  margin-bottom: 32px;
+}
+
+/* the dot */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #e0a030;
+  box-shadow: 0 0 0 3px rgba(224, 160, 48, 0.25);  /* the soft glow ring */
+}
+
+.timeline-date {
+  margin: 0 0 6px 0;
+  font-family: 'JetBrains Mono', Consolas, monospace;
+  font-size: 0.85em;
+  font-weight: bold;
+  color: rgb(63, 124, 128);
+}
+
+.timeline-text {
+  margin: 0;
+  color: #555;
+  line-height: 1.5;
+}
+
 .card-touch{
   background-color: #f5f5f5;
   border: 5px rgb(70, 70, 70);
