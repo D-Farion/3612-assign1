@@ -37,9 +37,15 @@ header .actions button {
   cursor: pointer;
 }
 
-header .actions button:hover {
+header .actions .aboutbutton{
   background-color: rgb(63, 124, 128);
 }
+
+header .actions .homebutton{
+  background-color: rgb(63, 124, 128);
+}
+
+
 
 main {
   display: flex;
@@ -208,10 +214,18 @@ section.featured {
   color: #555;
 }
 
+
+
+
+
+
+
+
+
+
 .story {
   background-color: lightgray;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding: 25px 10%;
   border-bottom: 2px solid rgb(185, 185, 185);
   display: flex;
   flex-wrap: nowrap;
@@ -222,67 +236,129 @@ section.featured {
 .story p{
   flex: 1;
   color: #555;
-  padding-right: 10%
 }
 
 .story .section-title{
-  padding-left: 10%;
   flex-shrink: 0;
 }
 
 .values{
   background-color: white;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 10%;
+  padding-right: 10%;
   border-bottom: 2px solid rgb(185, 185, 185)
 }
 
 .values .section-title{
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
+  color: #555;
+}
+
+.card-values{
+  background: rgb(235, 235, 235);
+  margin-bottom: 2em;
+  padding: 7.5%;
+  width: auto;
+  border-radius: 4px;
+  border:lightgray 1px solid;
+}
+
+.value-icon {   /* ai made the formatting on this better. prompt: "old code" how do I clean this up */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  margin: 5px;
+  border-radius: 2px;
+  background-color: #15151d; 
+}
+
+/* knowing I can do this came from the prior AI prompt*/
+.value-icon.quality        { color: #e0a030; }
+.value-icon.sustainability { color: #3fb950; }
+.value-icon.innovation     { color: white; }
+
+.about-title{
+  color: black;
+}
+
+.about-description{
   color: #555;
 }
 
 .team{
   background-color: lightgray;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 50px;
   border-bottom: 2px solid rgb(185, 185, 185)
 }
 
-.team .section-title{
-  padding-left: 10%;
-  flex-shrink: 0;
+
+.card-team{
+  background-color: lightgray;
 }
 
-.team p{
-  padding-left: 10%;
-  flex: 1;
+.thumbnail-team {
+  margin: 0;
+}
+
+.card-team img {
+  display: block;   
+  width: 100%; 
+  height: auto;
+}
+
+.team-body{
+  padding-right: 50%;
+  padding-bottom: 20px;
   color: #555;
-  padding-right: 50%
+}
+.team-name{
+  font-size: 1.3em;
+  color: black;
+}
+
+.team-title{
+  font-size: 0.9em;
+  color: rgb(158, 158, 0);
+}
+
+.team-description{
+  font-size: 1em;
+  color: #555;
 }
 
 .journey{
   background-color: white;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 10%;
+  padding-right: 10%;
   border-bottom: 2px solid rgb(185, 185, 185)
 }
 .journey .section-title{
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.7em;
   color: #555;
 }
 
 .touch{
   background-color: lightgray;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 50px;
 }
 
 .touch .section-title{
-  padding-left: 10%;
   flex-shrink: 0;
+}
+
+.card-touch{
+  background-color: #f5f5f5;
+  border: 5px rgb(70, 70, 70);
+  border-radius: 4px;
+  padding: 15px 20px;
 }
 
 
