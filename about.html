@@ -1,88 +1,87 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About | COMP3612 Assign 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Lora:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h2 class="title"><span class="highlight">// </span>COMP3612 Assign 1</h2>
-        <div class="actions">
-            <button>Home</button>
-            <button>Shop</button>
-            <button class="aboutbutton">About</button>
-            <button>Contact</button>
-            <button>Cart</button>
-        </div>
+        <a class="title" href="index.html"><span class="highlight">// </span>COMP3612 Assign 1</a>
+        <nav class="actions" aria-label="Main">
+                <a href="index.html">Home</a>
+                <a href="#">Shop</a>
+                <a href="about.html" class="active" aria-current="page">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Cart (0)</a>
+        </nav>
     </header>
 
     <main>
+        <section class="hero hero-about">
+            <h1 class="hero-title">About COMP3612 Assign 1</h1>
+            <p class="hero-description">Say something about your assignment ...</p>
+        </section>
+
         <section class="story">
             <h2 class="section-title">Our Story</h2>
             <p>COMP3612 Assign 1 began with a simple belief: that every programmer deserves clothes that not only look exceptional but feel extraordinary. Founded in 2025 by Your Name, our company emerged from a shared frustration with the compromise between quality and affordability in the coding attire market, as well as a strong desire to get an A grade in COMP3612.</p>
-
         </section>
 
         <section class="values">
             <h2 class="section-title">Our Values</h2>
-            <section class="cards">
+            <div class="cards">
                 <article class="card-values">
-                    <span class="value-icon quality">Q</span>
-                    <p class="about-title">Quality First</p>
-                    <p class="about-description">We are committed to providing the highest quality products that meet the needs of our customers.</p>
-                            
+                    <span class="value-icon quality" aria-hidden="true">Q</span>
+                    <h3 class="about-title">Quality First</h3>
+                    <p class="about-description">We source only the finest materials. Every stitch, every button, every detail is carefully considered and executed in a robust Linux shell.</p>
                 </article>
-
                 <article class="card-values">
-                    <span class="value-icon sustainability">S</span>
-                    <p class="about-title">Sustainability</p>
-                    <p class="about-description">We are committed to providing the highest quality products that meet the needs of our customers.</p>
-                              
+                    <span class="value-icon sustainability" aria-hidden="true">S</span>
+                    <h3 class="about-title">Sustainability</h3>
+                    <p class="about-description">We're committed to responsible manufacturing practices, using eco-friendly materials, and ensuring our production processes minimize environmental impact.</p>
                 </article>
-
                 <article class="card-values">
-                    <span class="value-icon innovation">I</span>
-                    <p class="about-title">Innovation</p>
-                    <p class="about-description">We are committed to providing the highest quality products that meet the needs of our customers.</p>
-                            
+                    <span class="value-icon innovation" aria-hidden="true">I</span>
+                    <h3 class="about-title">Innovation</h3>
+                    <p class="about-description">While we respect traditional tailoring methods, we continuously explore new assembly language techniques to improve comfort, durability, and style.</p>
                 </article>
-
-            </section>
+            </div>
         </section>
 
         <section class="team">
             <h2 class="section-title">Meet Our Team</h2>
-            <p class="team-body">Behind our clothes is a dedicated team of professionals who share a passion for quality and customer satisfaction. Ge to know the people who made our assignment possible.</p>
-            <section class="cards">
+            <p class="team-body">Behind our clothes is a dedicated team of professionals who share a passion for quality and customer satisfaction. Get to know the people who made our assignment possible.</p>
+            <div class="cards">
                 <article class="card-team">
                     <figure class="thumbnail-team">
-                        <img src="data/images/011-small-front.png" alt="placeholder">
+                        <img src="data/images/portrait1.jfif" alt="Gandalf the Grey">
                     </figure>
-                    <p class="team-name">Name </p>
-                    <p class="team-title">title</p>
-                    <p class="team-description">With over 3 weeks of web development experience, Name leads our product development and ensures everything we sell imporces you ability to understand algorithm design</p>
-                            
+                    <h3 class="team-name">Gandalf the Grey</h3>
+                    <p class="team-title">Founder &amp; CEO</p>
+                    <p class="team-description">With over 3 weeks of web development experience, Your Name leads our product development and ensures everything we sell improves your ability to understand algorithm design.</p>
                 </article>
                 <article class="card-team">
                     <figure class="thumbnail-team">
-                        <img src="data/images/011-small-front.png" alt="placeholder">
+                        <img src="data/images/portrait2.jfif" alt="Gandalf the white">
                     </figure>
-                    <p class="team-name">Name </p>
-                    <p class="team-title">title</p>
-                    <p class="team-description">hating CSS</p>
-                            
+                    <h3 class="team-name">Gandalf the white</h3>
+                    <p class="team-title">Clothes Tester</p>
+                    <p class="team-description">Willing to forgo the black hoodie and jeans to test a range of new products. Is partial to JavaScript-powered sweaters.</p>
                 </article>
                 <article class="card-team">
                     <figure class="thumbnail-team">
-                        <img src="data/images/011-small-front.png" alt="placeholder">
+                        <img src="data/images/portrait3.jfif" alt="Gandalf the Grey again">
                     </figure>
-                    <p class="team-name">Name </p>
-                    <p class="team-title">title</p>
-                    <p class="team-description">hating CSS</p>
-                            
+                    <h3 class="team-name">Gandalf the Grey again</h3>
+                    <p class="team-title">Family Member</p>
+                    <p class="team-description">Provided important startup capital as well as cooked dinners during midterm season.</p>
                 </article>
-
-            </section>
-
+            </div>
         </section>
 
         <section class="journey">
@@ -94,7 +93,7 @@
                 </li>
                 <li class="timeline-item">
                     <p class="timeline-date">Fall 2025</p>
-                    <p class="timeline-text">Began wearing linen shirts and wool pants. Unparalled CSS and JS skills soon followed.</p>
+                    <p class="timeline-text">Began wearing linen shirts and wool pants. Unparalleled CSS and JS skills soon followed.</p>
                 </li>
                 <li class="timeline-item">
                     <p class="timeline-date">Winter 2026</p>
@@ -102,65 +101,62 @@
                 </li>
                 <li class="timeline-item">
                     <p class="timeline-date">Summer 2026</p>
-                    <p class="timeline-text">Introduced a Haskel-driven sweater line.</p>
+                    <p class="timeline-text">Introduced a Haskell-driven sweater line.</p>
                 </li>
             </ol>
         </section>
 
         <section class="touch">
             <h2 class="section-title">Get In Touch</h2>
-             <section class="cards">
+            <div class="cards">
                 <article class="card-touch">
-                    <p class="team-name">Visit Our Showroom</p>
-                    <p class="team-description">123 fasion Avenue</p>
-                    <p class="team-description">New York, NY 10001</p>    
+                    <h3 class="team-name">Visit Our Showroom</h3>
+                    <address>
+                        <p class="team-description">123 Fashion Avenue</p>
+                        <p class="team-description">New York, NY 10001</p>
+                    </address>
                 </article>
                 <article class="card-touch">
-                    <p class="team-name">Contact us</p>
-                    <p class="team-description">Phone: (555) 123-4567</p>   
-                    <p class="team-description">Email: hello@comp3612.com</p> 
+                    <h3 class="team-name">Contact Us</h3>
+                    <address>
+                        <p class="team-description">Phone: (555) 123-4567</p>
+                        <p class="team-description">Email: hello@comp3612.com</p>
+                    </address>
                 </article>
-                <article class="card-team">
-                </article>
-
-            </section>
+            </div>
         </section>
-
     </main>
 
     <footer>
-        <table class="links">
-            <thead>
-                <tr>
-                    <th>Customer Service</th>
-                    <th>Company</th>
-                    <th>Connect</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Contact Us</td>
-                    <td>About Us</td>
-                    <td>Newsletter</td>
-                </tr>
-                <tr>
-                    <td>Size Guide</td>
-                    <td>Careers</td>
-                    <td>Facebook</td>
-                </tr>
-                <tr>
-                    <td>Returns</td>
-                    <td>Press</td>
-                    <td>Instagram</td>
-                </tr>
-                <tr>
-                    <td>Shipping Info</td>
-                    <td>Privacy Policy</td>
-                    <td>Twitter</td>
-                </tr>
-            </tbody>
-        </table>
-        
+        <nav class="footer-links" aria-label="Footer">
+            <div>
+                <h2>Customer Service</h2>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>Company</h2>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>Connect</h2>
+                <ul>
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </nav>
         <p class="copyright-text">&copy; COMP 3612. All Rights Reserved.</p>
     </footer>
 </body>

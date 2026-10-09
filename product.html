@@ -1,69 +1,206 @@
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-        <body>
-            <header>
-                <h2 class="title"><span class="highlight">// </span>COMP3612 Assign 1</h2>
-                <div class="actions">
-                    <button>Home</button>
-                    <button>Shop</button>
-                    <button>About</button>
-                    <button>Contact</button>
-                    <button>Cart</button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Merino Wool Cable Knit Sweater | COMP3612 Assign 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Lora:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a class="title" href="index.html"><span class="highlight">// </span>COMP3612 Assign 1</a>
+        <nav class="actions" aria-label="Main">
+                <a href="index.html">Home</a>
+                <a href="#">Shop</a>
+                <a href="about.html">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Cart (0)</a>
+        </nav>
+    </header>
+
+    <main class="product-page">
+
+        <section class="path">
+            <nav aria-label="Breadcrumb">
+                <a href="index.html">Home</a> &gt;
+                <a href="#">Sweaters</a> &gt;
+                <span aria-current="page">Merino Wool Cable Knit Sweater</span>
+            </nav>
+        </section>
+
+        <section class="item">
+            <div class="gallery">
+                <figure>
+                    <img id="main-image" class="main-image" src="data/images/003-medium-front.png" alt="Merino wool cable knit sweater, front view">
+                </figure>
+                <div class="thumbs">
+                    <img src="data/images/003-thumb-front.png" alt="Front view" class="thumb">
+                    <img src="data/images/003-thumb-front-angle.png" alt="Angled front view" class="thumb">
+                    <img src="data/images/003-thumb-back.png" alt="Back view" class="thumb">
                 </div>
-            </header>
+            </div>
 
-        <main>
-            <section class="path">
+            <!-- The Add to Cart button submits this form to the URL required by the assignment -->
+            <form class="info" action="https://www.randyconnolly.com/tests/process.php" method="post">
+                <h1 class="product-title">Merino Wool Cable Knit Sweater</h1>
+                <p class="rating"><span class="stars" role="img" aria-label="4.8 out of 5 stars">★★★★★</span> (4.8/5) - 127 reviews</p>
+                <p class="price">$199.99</p>
+                <p class="blurb">This luxurious cable knit sweater is made from 100% merino wool for exceptional warmth and softness. The classic cable pattern adds timeless texture and visual interest to this versatile piece. Natural temperature regulation properties make it perfect for transitional seasons.</p>
 
-            </section>
-            <section class="item">
+                <fieldset class="option-group">
+                    <legend>Size:</legend>
+                    <div class="sizes">
+                            <label class="size"><input type="radio" name="size" value="XS"><span>XS</span></label>
+                            <label class="size"><input type="radio" name="size" value="S"><span>S</span></label>
+                            <label class="size"><input type="radio" name="size" value="M"><span>M</span></label>
+                            <label class="size"><input type="radio" name="size" value="L"><span>L</span></label>
+                            <label class="size"><input type="radio" name="size" value="XL"><span>XL</span></label>
+                            <label class="size"><input type="radio" name="size" value="XXL"><span>XXL</span></label>
+                    </div>
+                </fieldset>
 
-            </section>
-            <section class="details">
+                <fieldset class="option-group">
+                    <legend>Color:</legend>
+                    <div class="swatches">
+                            <label class="swatch" title="Cream"><input type="radio" name="color" value="Cream" aria-label="Cream"><span style="--c:#e8e4dc"></span></label>
+                            <label class="swatch" title="Charcoal"><input type="radio" name="color" value="Charcoal" aria-label="Charcoal"><span style="--c:#3a3d47"></span></label>
+                            <label class="swatch" title="Navy"><input type="radio" name="color" value="Navy" aria-label="Navy"><span style="--c:#1f2a44"></span></label>
+                            <label class="swatch" title="Rust"><input type="radio" name="color" value="Rust" aria-label="Rust"><span style="--c:#c8601e"></span></label>
+                    </div>
+                </fieldset>
 
-            </section>
-            <section class="reviews">
-                
-            </section>
-        </main>
+                <label class="option-label" for="qty">Quantity:</label>
+                <input id="qty" class="qty" type="number" name="quantity" min="1" value="1">
 
-        <footer>
-                <table class="links">
-                    <thead>
-                        <tr>
-                            <th>Customer Service</th>
-                            <th>Company</th>
-                            <th>Connect</th>
-                        </tr>
-                    </thead>
+                <div class="buy-actions">
+                    <button type="submit" class="btn-cart">Add to Cart</button>
+                    <button type="button" class="btn-wishlist">Add to Wishlist</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="details">
+            <div class="tabs" role="tablist">
+                <button type="button" class="tab active" role="tab" aria-selected="true" data-panel="panel-description">Description</button>
+                <button type="button" class="tab" role="tab" aria-selected="false" data-panel="panel-specs">Specifications</button>
+                <button type="button" class="tab" role="tab" aria-selected="false" data-panel="panel-care">Care Instructions</button>
+            </div>
+
+            <div id="panel-description" class="panel active" role="tabpanel">
+                <h2>Product Details</h2>
+                <p>This luxurious cable knit sweater is made from 100% merino wool for exceptional warmth and softness. The classic cable pattern adds timeless texture and visual interest to this versatile piece. Natural temperature regulation properties make it perfect for transitional seasons.</p>
+                <p class="features-label">Key Features:</p>
+                <table class="features">
                     <tbody>
-                        <tr>
-                            <td>Contact Us</td>
-                            <td>About Us</td>
-                            <td>Newsletter</td>
-                        </tr>
-                        <tr>
-                            <td>Size Guide</td>
-                            <td>Careers</td>
-                            <td>Facebook</td>
-                        </tr>
-                        <tr>
-                            <td>Returns</td>
-                            <td>Press</td>
-                            <td>Instagram</td>
-                        </tr>
-                        <tr>
-                            <td>Shipping Info</td>
-                            <td>Privacy Policy</td>
-                            <td>Twitter</td>
-                        </tr>
+                        <tr><th scope="row">Material</th><td>100% premium merino wool</td></tr>
+                        <tr><th scope="row">Style</th><td>Classic cable knit pattern</td></tr>
+                        <tr><th scope="row">Closure</th><td>Ribbed cuffs and hem</td></tr>
+                        <tr><th scope="row">Care</th><td>Dry clean recommended</td></tr>
                     </tbody>
                 </table>
-                
-                <p class="copyright-text">&copy; COMP 3612. All Rights Reserved.</p>
-            </footer>
-        </body>
+            </div>
+
+            <div id="panel-specs" class="panel" role="tabpanel">
+                <h2>Specifications</h2>
+                <table class="features">
+                    <tbody>
+                        <tr><th scope="row">Fit</th><td>Regular</td></tr>
+                        <tr><th scope="row">Neckline</th><td>Crew neck</td></tr>
+                        <tr><th scope="row">Weight</th><td>Medium weight</td></tr>
+                        <tr><th scope="row">Origin</th><td>Imported</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="panel-care" class="panel" role="tabpanel">
+                <h2>Care Instructions</h2>
+                <p>Dry clean recommended. If hand washing, use cold water and a wool-safe detergent, then lay flat to dry. Do not wring, tumble dry, or hang, as this stretches the knit.</p>
+            </div>
+        </section>
+
+        <section class="reviews">
+            <h2>Customer Reviews</h2>
+            <article class="review">
+                <div class="review-head">
+                    <p class="reviewer">Maria C. <span class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</span></p>
+                    <time class="review-date" datetime="2026-03-18">March 18, 2026</time>
+                </div>
+                <p>Absolutely stunning sweater! The merino wool is incredibly soft and the cable knit detail is beautiful. Worth the investment.</p>
+            </article>
+            <article class="review">
+                <div class="review-head">
+                    <p class="reviewer">Robert H. <span class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</span></p>
+                    <time class="review-date" datetime="2026-03-05">March 5, 2026</time>
+                </div>
+                <p>Bought this for our lead software engineer and she loves it. High quality construction and the wool feels luxurious. Fits true to size.</p>
+            </article>
+            <article class="review">
+                <div class="review-head">
+                    <p class="reviewer">Nina F. <span class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</span></p>
+                    <time class="review-date" datetime="2026-02-20">February 20, 2026</time>
+                </div>
+                <p>Beautiful sweater but requires dry cleaning which is inconvenient. The quality is excellent though and it's very warm.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <nav class="footer-links" aria-label="Footer">
+            <div>
+                <h2>Customer Service</h2>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>Company</h2>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>Connect</h2>
+                <ul>
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </nav>
+        <p class="copyright-text">&copy; COMP 3612. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Tabs
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => {
+                    t.classList.remove('active');
+                    t.setAttribute('aria-selected', 'false');
+                });
+                document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                tab.setAttribute('aria-selected', 'true');
+                document.getElementById(tab.dataset.panel).classList.add('active');
+            });
+        });
+
+        // Thumbnails swap the main image
+        document.querySelectorAll('.thumb').forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                document.getElementById('main-image').src = thumb.src;
+            });
+        });
+    </script>
+</body>
 </html>

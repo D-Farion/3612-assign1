@@ -1,82 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>COMP3612 Assign 1 | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Lora:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h2 class="title"><span class="highlight">// </span>COMP3612 Assign 1</h2>
-        <div class="actions">
-            <button class="homebutton">Home</button>
-            <button>Shop</button>
-            <button>About</button>
-            <button>Contact</button>
-            <button>Cart</button>
-        </div>
+        <a class="title" href="index.html"><span class="highlight">// </span>COMP3612 Assign 1</a>
+        <nav class="actions" aria-label="Main">
+                <a href="index.html" class="active" aria-current="page">Home</a>
+                <a href="#">Shop</a>
+                <a href="about.html">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Cart (0)</a>
+        </nav>
     </header>
 
     <main>
         <section class="hero">
             <h1 class="hero-title">Fashion for Computer Scientists</h1>
             <p class="hero-description">Discover our collection of comfortable, stylish clothes for every programming occasion.</p>
-            <button class="hero-button">Shop Now</button>
+            <button type="button" class="hero-button">Shop Now</button>
         </section>
-
 
         <section class="featured">
             <h2 class="section-title">Featured Products</h2>
-            <section class="cards">
-
+            <div class="cards">
                 <article class="card">
                     <figure class="thumbnail">
-                    <img src="data/images/003-small-front.png" alt="placeholder">
+                        <img src="data/images/003-small-front.png" alt="Cable Knit Sweater">
                     </figure>
                     <div class="card-content">
-                    <p class="product-name">Cable Knit Sweater</p>
-                    <p class="product-price">$119.99</p>
+                        <h3 class="product-name">Cable Knit Sweater</h3>
+                        <p class="product-price">$119.99</p>
                         <div class="card-actions">
-                            <button >View Details</button>
+                            <a class="btn-details" href="product.html">View Details</a>
                         </div>
-                    </div>          
+                    </div>
                 </article>
                 <article class="card">
                     <figure class="thumbnail">
-                    <img src="data/images/008-small-front.png" alt="placeholder">
+                        <img src="data/images/008-small-front.png" alt="Chelsea Leather Boots">
                     </figure>
                     <div class="card-content">
-                    <p class="product-name">Chelsea Leather Boots</p>
-                    <p class="product-price">$189.99</p>
-                    <div class="card-actions">
-                            <button >View Details</button>
+                        <h3 class="product-name">Chelsea Leather Boots</h3>
+                        <p class="product-price">$189.99</p>
+                        <div class="card-actions">
+                            <a class="btn-details" href="#">View Details</a>
                         </div>
-                    </div>            
+                    </div>
                 </article>
                 <article class="card">
                     <figure class="thumbnail">
-                    <img src="data/images/011-small-front.png" alt="placeholder">
+                        <img src="data/images/011-small-front.png" alt="Vintage Flannel Shirt">
                     </figure>
                     <div class="card-content">
-                    <p class="product-name">Vintage Flannel Shirt</p>
-                    <p class="product-price">$52.99</p>
-                    <div class="card-actions">
-                            <button >View Details</button>
+                        <h3 class="product-name">Vintage Flannel Shirt</h3>
+                        <p class="product-price">$52.99</p>
+                        <div class="card-actions">
+                            <a class="btn-details" href="#">View Details</a>
                         </div>
-                    </div>         
+                    </div>
                 </article>
                 <article class="card">
                     <figure class="thumbnail">
-                    <img src="data/images/009-small-front.png" alt="placeholder">
+                        <img src="data/images/009-small-front.png" alt="Cardigan Sweater">
                     </figure>
                     <div class="card-content">
-                    <p class="product-name">Cardigan Sweater</p>
-                    <p class="product-price">$69.99</p>
-                    <div class="card-actions">
-                            <button >View Details</button>
+                        <h3 class="product-name">Cardigan Sweater</h3>
+                        <p class="product-price">$69.99</p>
+                        <div class="card-actions">
+                            <a class="btn-details" href="#">View Details</a>
                         </div>
-                    </div>           
+                    </div>
                 </article>
-            </section>
+            </div>
         </section>
 
         <section class="about">
@@ -84,42 +87,38 @@
             <p class="description">We believe that programmers need more than black hoodies. You'll be a more confident, comfortable, and efficient developer wearing our clothes. Our carefully curated collection features premium fabrics, expert craftsmanship, and timeless designs.</p>
             <p class="description">From scrum sessions to 4am debugging, we have the perfect clothes for every moment in your coding journey. Quality you can feel, style you can trust.</p>
         </section>
-
     </main>
 
     <footer>
-        <table class="links">
-            <thead>
-                <tr>
-                    <th>Customer Service</th>
-                    <th>Company</th>
-                    <th>Connect</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Contact Us</td>
-                    <td>About Us</td>
-                    <td>Newsletter</td>
-                </tr>
-                <tr>
-                    <td>Size Guide</td>
-                    <td>Careers</td>
-                    <td>Facebook</td>
-                </tr>
-                <tr>
-                    <td>Returns</td>
-                    <td>Press</td>
-                    <td>Instagram</td>
-                </tr>
-                <tr>
-                    <td>Shipping Info</td>
-                    <td>Privacy Policy</td>
-                    <td>Twitter</td>
-                </tr>
-            </tbody>
-        </table>
-        
+        <nav class="footer-links" aria-label="Footer">
+            <div>
+                <h2>Customer Service</h2>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>Company</h2>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>Connect</h2>
+                <ul>
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </nav>
         <p class="copyright-text">&copy; COMP 3612. All Rights Reserved.</p>
     </footer>
 </body>

@@ -7,6 +7,8 @@ body {
 
 header {
   display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
   justify-content: space-between; /* logo left, buttons right */
   align-items: center;            /* vertically center everything */
   padding: 12px 24px;
@@ -15,6 +17,7 @@ header {
 }
 
 header .title {
+  text-decoration: none;
   font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
   font-weight: 500;
   font-size: 1.5rem;
@@ -25,27 +28,43 @@ header .highlight {
   color: #e0a030;
 }
 
-header .actions button {
-  width: 90px;
-  padding: 8px 16px;
+
+
+
+/* Header navigation links.
+   CREDIT: written with help from Claude (Anthropic). Prompt: "update files to match the program specs"
+   (assignment requires header items to be links with a hover colour change). */
+header .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+header .actions a {
+  display: inline-block;
+  min-width: 90px;
+  box-sizing: border-box;
+  padding: 8px 12px;
   text-align: center;
-  background-color: var(--header-background-color);
+  text-decoration: none;
   color: darkgray;
   font-size: 16px;
   border-radius: 4px;
-  border: none;
-  cursor: pointer;
 }
 
-header .actions .aboutbutton{
+header .actions a:hover,
+header .title:hover .highlight {
+  color: #e0a030;           /* hover: text colour changes */
+}
+
+header .actions a.active {  /* current page (Home on index, About on about) */
   background-color: rgb(63, 124, 128);
+  color: white;
 }
 
-header .actions .homebutton{
-  background-color: rgb(63, 124, 128);
+header .actions a.active:hover {
+  color: #e0a030;
 }
-
-
 
 main {
   display: flex;
@@ -75,7 +94,7 @@ main {
 .hero::after {
   content: "{ }";               /* AI helped with this curly bracket thing */
   position: absolute;           /* AI helped with this curly bracket thing */
-  top: 30%;                     /* AI helped with this curly bracket thing */
+  top: 50%;                     /* AI helped with this curly bracket thing */
   right: -2%;                   /* AI helped with this curly bracket thing */
   transform: translateY(-50%);  /* AI helped with this curly bracket thing */
   font-family: 'JetBrains Mono', Consolas, monospace;   /* AI helped with this curly bracket thing */
@@ -95,6 +114,26 @@ main {
   padding:15px 30px;
   border-radius: 4px;
   font-size: 1.2rem;
+}
+
+/* Smaller centred banner on the About page (reuses .hero and its curly-bracket background).
+   CREDIT: written with help from Claude (Anthropic). Prompt: "update files to match the program specs". */
+.hero-about {
+  display: grid;
+  justify-content: center;   /* centres the title block on the page */
+  text-align: left;          /* but the caption lines up with the title's left edge */
+  padding: 100px 10%;
+}
+
+.hero-about .hero-title {
+  font-size: 3.5rem;
+  padding-right: 0;
+  margin: 0 0 0.25em;
+}
+
+.hero-about .hero-description {
+  margin: 0;
+  font-size: 0.85em;
 }
 
 .section-title{
@@ -172,8 +211,11 @@ section.featured {
   filter: saturate(150%);
 }
 
-.card button {
+.card .btn-details {
   display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.85rem;
   width: 100%;
   box-sizing: border-box;
   padding: 10px 0;
@@ -184,7 +226,7 @@ section.featured {
   cursor: pointer;
 }
 
-.card:hover button {
+.card:hover .btn-details {
   background-color: #1a1a1a;
   color: white;
 }
@@ -213,15 +255,6 @@ section.featured {
   font-family: 'Inter', Arial, sans-serif;
   color: #555;
 }
-
-
-
-
-
-
-
-
-
 
 .story {
   background-color: lightgray;
@@ -280,8 +313,16 @@ section.featured {
 .value-icon.sustainability { color: #3fb950; }
 .value-icon.innovation     { color: white; }
 
+.about-title,
+.team-name {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 600;
+  margin: 0.6em 0 0.3em;
+}
+
 .about-title{
   color: black;
+  font-size: 1em;
 }
 
 .about-description{
@@ -299,6 +340,21 @@ section.featured {
 
 .card-team{
   background-color: lightgray;
+}
+
+.touch .cards {
+  /* Three equal columns (two cards + an empty slot) on wide screens, fewer columns when narrow.
+     The empty slot is done in CSS, so no blank <article> is needed in the HTML. */
+  grid-template-columns: repeat(auto-fill, minmax(max(220px, calc((100% - 50px) / 3 - 1px)), 1fr));
+}
+
+.card-touch address {
+  font-style: normal;
+}
+
+.card-touch p {
+  margin: 0.3em 0;
+  overflow-wrap: anywhere;
 }
 
 .thumbnail-team {
@@ -354,6 +410,10 @@ section.featured {
   flex-shrink: 0;
 }
 
+
+/* ===== Timeline =====
+   CREDIT: the timeline was written with help from Claude (Anthropic).
+   Prompt: "how do I make something like this timeline" (screenshot of the timeline page). */
 .timeline {
   list-style: none;       /* remove the numbers */
   margin: 0 auto;
@@ -370,7 +430,6 @@ section.featured {
   padding-bottom: 50px;   /* spacing below the timeline now lives here */
 }
 
-/* the vertical line. AI helped with the whole making of the line */
 .timeline::before {
   content: "";
   position: absolute;
@@ -416,7 +475,7 @@ section.featured {
 
 .card-touch{
   background-color: #f5f5f5;
-  border: 5px rgb(70, 70, 70);
+  border: 1px solid #ddd;
   border-radius: 4px;
   padding: 15px 20px;
 }
@@ -437,20 +496,407 @@ footer .copyright-text {
   font-size: 0.8em;
 }
 
-table.links {
-  text-align: left;  
-  border: 0px;
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-table.links th {
+.footer-links h2 {
+  margin: 0 0 15px;
+  font-size: 1em;
   color: white;
-  width: 45.5%;
-  padding-bottom: 15px;
 }
 
-table.links td {
+.footer-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 15px;
+}
+
+.footer-links a {
   color: lightgray;
-  padding-bottom: 15px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #e0a030;
+}
+
+
+/* ===== Product page =====
+   CREDIT: the product page styles were written with help from Claude (Anthropic).
+   Prompt: "I need to make everything in the picture" (screenshot of the product page), then
+   "update files to match the program specs". */
+.product-page,
+.product-page *,
+.product-page *::before,
+.product-page *::after {
+  box-sizing: border-box;   /* padding and borders count inside widths */
+}
+
+.product-page {
+  font-family: 'Inter', Arial, sans-serif;
+  color: #444;
+  background-color: #f3f4f8;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.product-page > section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.product-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-page h1,
+.product-page h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.stars {
+  color: #e0a030;
+  letter-spacing: 1px;
+}
+
+/* ---- Breadcrumb ---- */
+.path {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  font-family: 'JetBrains Mono', Consolas, monospace;
+  font-size: 12px;
+}
+
+/* ---- Gallery + info ---- */
+.item {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 40px;
+  padding-bottom: 40px;
+}
+
+.main-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #d3d3d3;
+}
+
+.thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.thumb {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #d3d3d3;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.thumb:hover {
+  border-color: #1a1a1a;
+}
+
+.product-title {
+  font-size: 1.9rem;
+  line-height: 1.2;
+  margin: 0 0 8px;
+}
+
+.rating {
+  margin: 0 0 12px;
+  font-size: 12px;
+  color: #777;
+}
+
+.price {
+  font-family: 'JetBrains Mono', Consolas, monospace;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0 0 14px;
+}
+
+.blurb {
+  color: #666;
+  margin: 0 0 20px;
+}
+
+.option-label {
+  display: block;
+  margin: 16px 0 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* Size and colour are radio inputs (so they submit with the form), styled as buttons / circles */
+.option-group {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.option-group legend {
+  padding: 0;
+  margin: 16px 0 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.sizes,
+.swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.size,
+.swatch {
+  position: relative;
+  cursor: pointer;
+}
+
+.size input,
+.swatch input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.size span {
+  display: block;
+  min-width: 40px;
+  padding: 7px 10px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  font-family: 'JetBrains Mono', Consolas, monospace;
+  font-size: 12px;
+}
+
+.size:hover span {
+  border-color: #1a1a1a;
+}
+
+.size input:checked + span {
+  background: #1a1a1a;
+  color: white;
+  border-color: #1a1a1a;
+}
+
+.swatch {
+  margin-right: 2px;
+}
+
+.swatch span {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: var(--c);
+  box-shadow: 0 0 0 1px #bbb;   /* thin ring that doesn't change the size */
+}
+
+.swatch input:checked + span {
+  box-shadow: 0 0 0 2px #1a1a1a;
+}
+
+.size input:focus-visible + span,
+.swatch input:focus-visible + span {
+  outline: 2px solid #e0a030;
+  outline-offset: 2px;
+}
+
+.qty {
+  width: 80px;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  font-family: 'JetBrains Mono', Consolas, monospace;
+  font-size: 14px;
+}
+
+.buy-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn-cart,
+.btn-wishlist {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-cart {
+  background: #d9a31c;
+  border: 1px solid #d9a31c;
+  color: #1a1a1a;
+}
+
+.btn-cart:hover {
+  background: #c18f12;
+}
+
+.btn-wishlist {
+  background: white;
+  border: 1px solid #ccc;
+  color: #1a1a1a;
+}
+
+.btn-wishlist:hover {
+  border-color: #1a1a1a;
+}
+
+.details {
+  border-top: 1px solid #d8dae0;   /* the divider across the page */
+  padding-top: 0;
+  padding-bottom: 32px;
+}
+
+.tabs {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #d8dae0;
+}
+
+.tab {
+  padding: 14px 0;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;             /* sits on top of the tab bar line */
+  font-family: inherit;
+  font-size: 12px;
+  color: #777;
+  cursor: pointer;
+}
+
+.tab.active {
+  color: #1a1a1a;
+  border-bottom-color: #1a1a1a;
+}
+
+.panel {
+  display: none;
+  max-width: 560px;
+}
+
+.panel.active {
+  display: block;
+}
+
+.panel h2,
+.reviews h2 {
+  font-size: 1.1rem;
+  margin: 0 0 10px;
+}
+
+.features-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 16px 0 6px;
+}
+
+.features {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'JetBrains Mono', Consolas, monospace;
+  font-size: 12px;
+}
+
+.features th,
+.features td {
+  padding: 8px 4px;
+  text-align: left;
+  font-weight: normal;
+  border-bottom: 1px solid #d8dae0;
+}
+
+.features th {
+  width: 40%;
+}
+
+.reviews {
+  border-top: 1px solid #d8dae0;
+  padding-top: 24px;
+  padding-bottom: 48px;
+}
+
+.review {
+  padding: 14px 0 18px;
+  border-bottom: 1px solid #d8dae0;
+}
+
+.review p {
+  margin: 4px 0 0;
+  max-width: 560px;
+}
+
+.review-head {
+  display: flex;
+  justify-content: space-between;   
+  align-items: baseline;
+}
+
+.review-head p {
+  margin: 0;
+}
+
+.reviewer {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.review-date {
+  font-family: 'JetBrains Mono', Consolas, monospace;
+  font-size: 11px;
+  color: #777;
+}
+
+/* ---- Small screens: stack the gallery above the info ---- */
+@media screen and (max-width: 768px) {
+  .item {
+    grid-template-columns: 1fr;
+  }
+
+  .product-page > section {
+    padding: 0 20px;
+  }
 }
 
 
